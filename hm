@@ -1,0 +1,9 @@
+const { data, error } = await supabase
+  .storage
+  .from('bot-sessions')
+  .download(`${sessionId}/creds.json`);
+
+if (data) {
+  const buffer = await data.arrayBuffer();
+  fs.writeFileSync('./auth/creds.json', Buffer.from(buffer));
+}
