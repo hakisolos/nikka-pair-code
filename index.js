@@ -83,7 +83,7 @@ async function connector(Num, res) {
                     const result = await uploadCreds(buffer, 'creds.json');
                     const sessionId = result?.url || result?.file || JSON.stringify(result);
                     await session.sendMessage(session.user.id, {
-                        image: { url: "https://files.catbox.moe/bxcqsb.jpg" },
+                        image: { url: "http://cdn-haki.zone.id/files/RpFHwN.jpg" },
                         caption: sessionId
                     });
                 }
@@ -133,3 +133,4 @@ app.get('/pair', async (req, res) => {
 app.listen(port, () => {
     console.log(`Running on PORT:${port}`);
 });
+
